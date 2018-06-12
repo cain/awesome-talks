@@ -18,6 +18,9 @@ const Global = ({ theme, children }) => {
     line-height: ${remcalc(21)};
     padding-bottom: ${remcalc(40)};
     background-color: ${theme.primary};
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1;
   }
 
         div[id*='do-not-delete-this-hack'] {

@@ -18,19 +18,19 @@ const Speaker = styled.p`
         padding-bottom: ${remcalc(4)};
         line-height: 1;
         border: 0;
-        margin-top: ${remcalc(10)};
         font-size: ${remcalc(12)};
-        color: ${props => props.theme.darkGrey};
         padding-left: 0;
         transition: color 200ms ease;
+        font-weight: 500;
+        color: #000;
     }
 `
 
 const Name = styled.h2`
-    font-weight: 700;
-    font-size: ${remcalc(24)};
+    font-weight: 900;
+    font-size: ${remcalc(18)};
     color: ${props => props.theme.main};
-    line-height: ${remcalc(30)};
+    line-height: ${remcalc(24)};
     margin-bottom: ${remcalc(10)};
     margin-top: 0;
     display: block;

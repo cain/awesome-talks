@@ -4,7 +4,6 @@ import Flex from 'styled-flex-component'
 import { graphql, compose } from 'react-apollo'
 // import Fuse from 'fuse.js'
 import Video from './Video'
-import { Title } from './../Components/Header'
 import Query from './Query'
 import Scroll from './Scroll'
 import ALL_VIDEOS from '../Queries/ALL_VIDEOS'
@@ -13,10 +12,12 @@ import ADD_WATCHED from '../Queries/ADD_WATCHED'
 import GET_WATCHED from '../Queries/GET_WATCHED'
 import COUNT from '../Queries/COUNT'
 
+const PER_PAGE = 12
+
 const getMore = (fetchMore, allVideoses) =>
     fetchMore({
         variables: {
-            first: 9,
+            first: PER_PAGE,
             after: allVideoses[allVideoses.length - 1].id
         },
         updateQuery: (prev, { fetchMoreResult }) => {
@@ -54,9 +55,7 @@ class TalksComponent extends Component {
             <Col xs={12}>
                 <Row>
                     {!this.state.videos.length ? (
-                        <Flex justifyCenter full>
-                            <Title small>No videos match your query</Title>
-                        </Flex>
+                        <Flex justifyCenter full />
                     ) : null}
                     {this.state.videos.map(v => (
                         <Video
@@ -92,7 +91,7 @@ const VideoComponent = ({ search }) => (
     <Query
         query={ALL_VIDEOS}
         variables={{
-            first: 9,
+            first: PER_PAGE,
             search
         }}
     >

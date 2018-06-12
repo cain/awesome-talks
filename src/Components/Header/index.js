@@ -11,9 +11,9 @@ import HideViewed from '../HideViewed'
 
 export const Title = styled.h1`
     opacity: 0.8;
-    font-family: Avenir, Montserrat;
-    font-weight: 600;
-    font-size: ${remcalc(90)};
+    font-family: Avenir;
+    font-weight: normal;
+    font-size: ${remcalc(35)};
     line-height: 1.2;
     color: ${props => props.theme.main};
     letter-spacing: ${remcalc(-0.25)};
@@ -68,6 +68,7 @@ const Wrapper = styled(Row)`
 
 const Header = ({
     title = 'Talks',
+    subTitle,
     noSearch,
     small,
     match,
@@ -79,9 +80,12 @@ const Header = ({
     <Wrapper small={small}>
         <Col xs={12}>
             <SearchWrapper full alignCenter justifyBetween>
-                <Title code={code} small={small}>
-                    {title}
-                </Title>
+                <div>
+                    <Title code={code} small={small}>
+                        {title}
+                    </Title>
+                    <p>{subTitle}</p>
+                </div>
                 {noSearch ? null : <Search keyName={keyName} query={query} />}
             </SearchWrapper>
             {match.path === '/' ? <HideViewed /> : null}

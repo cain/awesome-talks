@@ -7,14 +7,13 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 const Wrapper = styled.div`
     display: flex;
-    width: ${remcalc(300)};
+    width: ${remcalc(130)};
     position: relative;
     transition: all 0.35s ease-in-out;
 
     @media (min-width: ${remcalc(769)}) {
         &.expanded {
-            margin-left: -100%;
-            width: 100%;
+            width: 30%;
         }
     }
 `
@@ -26,7 +25,7 @@ const Icon = styled(FontAwesomeIcon)`
 `
 
 const SearchIcon = Icon.extend`
-    left: ${remcalc(20)};
+    left: ${remcalc(5)};
     max-width: ${remcalc(20)};
 `
 
@@ -34,23 +33,13 @@ const CloseIcon = Icon.extend`
     right: ${remcalc(20)};
 `
 
-const SlashIcon = styled.span`
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    padding: 10px 10px;
-    font-size: ${remcalc(34)};
-    color: #666;
-`
-
 const Input = styled.input`
     border: none;
-    border-bottom: 1px solid ${props => props.theme.main};
-    padding: ${remcalc(30)} ${remcalc(30)} ${remcalc(30)} ${remcalc(58)};
+    font-family: Avenir;
+    padding: ${remcalc(10)} ${remcalc(10)} ${remcalc(10)} ${remcalc(35)};
     width: 100%;
-    font-size: ${remcalc(34)};
-    font-weight: 300;
+    font-size: ${remcalc(24)};
+    font-weight: 100;
     outline: none;
     background: ${props => props.theme.primary};
     color: ${props => props.theme.main};
@@ -135,10 +124,6 @@ class Search extends Component {
                                         })
                                     }}
                                 />
-                            )}
-                        {!data[keyName] &&
-                            this.state.focused === false && (
-                                <SlashIcon aria-hidden="true">/</SlashIcon>
                             )}
                         <Input
                             aria-label="Search"

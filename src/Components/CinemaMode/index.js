@@ -9,7 +9,7 @@ const Column = styled(Col)`
     transition: all 200ms ease;
     justify-content: center;
     margin: 0 auto;
-    margin-bottom: ${remcalc(40)};
+    margin-bottom: ${remcalc(20)};
 
     ${is('cinemaMode')`
   position: fixed;
@@ -32,18 +32,18 @@ injectGlobal`
     }
 `
 
-const Button = styled.button`
-    background: transparent;
-    display: block;
-    border: none;
-    color: ${props => props.theme.cinema};
-    font-weight: 600;
-    text-align: right;
-    padding: 6px 0px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background 200ms ease;
-`
+// const Button = styled.button`
+//     background: transparent;
+//     display: block;
+//     border: none;
+//     color: ${props => props.theme.cinema};
+//     font-weight: 600;
+//     text-align: right;
+//     padding: 6px 0px;
+//     cursor: pointer;
+//     text-transform: uppercase;
+//     transition: background 200ms ease;
+// `
 
 const Overlay = styled.div`
     width: 100%;
@@ -96,18 +96,18 @@ export default class CinemaMode extends Component {
         return (
             <Column
                 cinemaMode={cinemaMode}
-                md={cinemaMode ? 12 : 4}
+                md={cinemaMode ? 12 : 3}
                 sm={cinemaMode ? 12 : 6}
                 xs={9}
             >
                 <div>
                     {render(cinemaMode, showVideo, this.toggleCinemaMode)}
-                    <Button
+                    {/* <Button
                         name="Toggle Cinema Mode"
                         onClick={this.toggleCinemaMode}
                     >
                         {cinemaMode ? 'Turn Off' : 'Turn On'} Cinema Mode
-                    </Button>
+                    </Button> */}
 
                     {cinemaMode
                         ? createPortal(

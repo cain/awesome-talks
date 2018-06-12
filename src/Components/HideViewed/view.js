@@ -79,7 +79,7 @@ const Hide = styled.div`
             transition: all 0.4s ease;
             &:after {
                 border-radius: 2em;
-                background: #fff;
+                background: ${props => props.theme.main};
                 transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
                     padding 0.3s ease, margin 0.3s ease;
                 box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
